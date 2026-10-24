@@ -1,1 +1,516 @@
+root@ubuntu:~$ ls -l
+total 168
+-rw-r--r-- 1 root      root      148407 Oct 24 17:22 File-01.txt
+-rw-r--r-- 1 root      root           0 Oct 24 17:22 file-01
+-rw-r--r-- 1 root      root          18 Oct 24 17:22 file-01.txt
+-rw-r--r-- 1 root      root           0 Oct 24 17:22 file-02
+lrwxrwxrwx 1 root      root           1 Oct  5 12:29 filesystem -> /
+-rw-r--r-- 1 testuser  testuser      18 Oct 24 17:22 notmyfile
+-rw-r--r-- 1 otheruser otheruser     19 Oct 24 17:22 notmyfile2
+drwxr-xr-x 2 root      root        4096 Oct 24 17:22 testDir
+drwxr-xr-x 3 root      root        4096 Oct 24 17:22 testdir
+root@ubuntu:~$ ls --color=no
+File-01.txt  file-01  file-01.txt  file-02  filesystem  notmyfile  notmyfile2  testDir  testdir
+root@ubuntu:~$ ls -l --color=no
+total 168
+-rw-r--r-- 1 root      root      148407 Oct 24 17:22 File-01.txt
+-rw-r--r-- 1 root      root           0 Oct 24 17:22 file-01
+-rw-r--r-- 1 root      root          18 Oct 24 17:22 file-01.txt
+-rw-r--r-- 1 root      root           0 Oct 24 17:22 file-02
+lrwxrwxrwx 1 root      root           1 Oct  5 12:29 filesystem -> /
+-rw-r--r-- 1 testuser  testuser      18 Oct 24 17:22 notmyfile
+-rw-r--r-- 1 otheruser otheruser     19 Oct 24 17:22 notmyfile2
+drwxr-xr-x 2 root      root        4096 Oct 24 17:22 testDir
+drwxr-xr-x 3 root      root        4096 Oct 24 17:22 testdir
+root@ubuntu:~$ ls -l --color=auto
+total 168
+-rw-r--r-- 1 root      root      148407 Oct 24 17:22 File-01.txt
+-rw-r--r-- 1 root      root           0 Oct 24 17:22 file-01
+-rw-r--r-- 1 root      root          18 Oct 24 17:22 file-01.txt
+-rw-r--r-- 1 root      root           0 Oct 24 17:22 file-02
+lrwxrwxrwx 1 root      root           1 Oct  5 12:29 filesystem -> /
+-rw-r--r-- 1 testuser  testuser      18 Oct 24 17:22 notmyfile
+-rw-r--r-- 1 otheruser otheruser     19 Oct 24 17:22 notmyfile2
+drwxr-xr-x 2 root      root        4096 Oct 24 17:22 testDir
+drwxr-xr-x 3 root      root        4096 Oct 24 17:22 testdir
+root@ubuntu:~$ ls -n
+total 168
+-rw-r--r-- 1    0    0 148407 Oct 24 17:22 File-01.txt
+-rw-r--r-- 1    0    0      0 Oct 24 17:22 file-01
+-rw-r--r-- 1    0    0     18 Oct 24 17:22 file-01.txt
+-rw-r--r-- 1    0    0      0 Oct 24 17:22 file-02
+lrwxrwxrwx 1    0    0      1 Oct  5 12:29 filesystem -> /
+-rw-r--r-- 1 1001 1001     18 Oct 24 17:22 notmyfile
+-rw-r--r-- 1 1002 1002     19 Oct 24 17:22 notmyfile2
+drwxr-xr-x 2    0    0   4096 Oct 24 17:22 testDir
+drwxr-xr-x 3    0    0   4096 Oct 24 17:22 testdir
+root@ubuntu:~$ ls -a
+.   .bashrc       .profile  .theia  .wget-hsts   file-01      file-02     notmyfile   testDir
+..  .hidden-file  .ssh      .vimrc  File-01.txt  file-01.txt  filesystem  notmyfile2  testdir
+root@ubuntu:~$ .
+bash: .: filename argument required
+.: usage: . filename [arguments]
+root@ubuntu:~$ ..
+..: command not found
+root@ubuntu:~$ ls .
+File-01.txt  file-01  file-01.txt  file-02  filesystem  notmyfile  notmyfile2  testDir  testdir
+root@ubuntu:~$ ls ..
+bin                boot  etc   lib                lib64       media  opt   root  sbin                snap  swapfile  tmp  var
+bin.usr-is-merged  dev   home  lib.usr-is-merged  lost+found  mnt    proc  run   sbin.usr-is-merged  srv   sys       usr
+root@ubuntu:~$ ls -a
+.   .bashrc       .profile  .theia  .wget-hsts   file-01      file-02     notmyfile   testDir
+..  .hidden-file  .ssh      .vimrc  File-01.txt  file-01.txt  filesystem  notmyfile2  testdir
+root@ubuntu:~$ ls -A
+.bashrc       .profile  .theia  .wget-hsts   file-01      file-02     notmyfile   testDir
+.hidden-file  .ssh      .vimrc  File-01.txt  file-01.txt  filesystem  notmyfile2  testdir
+root@ubuntu:~$ ls -al
+total 200
+drwx------  6 root      root        4096 Oct 24 17:22 .
+drwxr-xr-x 22 root      root        4096 Oct  5 12:29 ..
+-rw-r--r--  1 root      root        3234 Oct  5 12:29 .bashrc
+-rw-r--r--  1 root      root           0 Oct 24 17:22 .hidden-file
+-rw-r--r--  1 root      root         161 Apr 22  2024 .profile
+drwx------  2 root      root        4096 Oct  5 12:28 .ssh
+drwxr-xr-x  3 root      root        4096 Oct 24 17:08 .theia
+-rw-r--r--  1 root      root         109 Oct  5 12:29 .vimrc
+-rw-r--r--  1 root      root         165 Oct  5 12:30 .wget-hsts
+-rw-r--r--  1 root      root      148407 Oct 24 17:22 File-01.txt
+-rw-r--r--  1 root      root           0 Oct 24 17:22 file-01
+-rw-r--r--  1 root      root          18 Oct 24 17:22 file-01.txt
+-rw-r--r--  1 root      root           0 Oct 24 17:22 file-02
+lrwxrwxrwx  1 root      root           1 Oct  5 12:29 filesystem -> /
+-rw-r--r--  1 testuser  testuser      18 Oct 24 17:22 notmyfile
+-rw-r--r--  1 otheruser otheruser     19 Oct 24 17:22 notmyfile2
+drwxr-xr-x  2 root      root        4096 Oct 24 17:22 testDir
+drwxr-xr-x  3 root      root        4096 Oct 24 17:22 testdir
+root@ubuntu:~$ date
+Sat Oct 24 17:41:19 UTC 2026
+root@ubuntu:~$ ls -lt
+total 168
+-rw-r--r-- 1 root      root      148407 Oct 24 17:22 File-01.txt
+-rw-r--r-- 1 root      root          18 Oct 24 17:22 file-01.txt
+drwxr-xr-x 3 root      root        4096 Oct 24 17:22 testdir
+drwxr-xr-x 2 root      root        4096 Oct 24 17:22 testDir
+-rw-r--r-- 1 otheruser otheruser     19 Oct 24 17:22 notmyfile2
+-rw-r--r-- 1 testuser  testuser      18 Oct 24 17:22 notmyfile
+-rw-r--r-- 1 root      root           0 Oct 24 17:22 file-02
+-rw-r--r-- 1 root      root           0 Oct 24 17:22 file-01
+lrwxrwxrwx 1 root      root           1 Oct  5 12:29 filesystem -> /
+root@ubuntu:~$ ls -la
+total 200
+drwx------  6 root      root        4096 Oct 24 17:22 .
+drwxr-xr-x 22 root      root        4096 Oct  5 12:29 ..
+-rw-r--r--  1 root      root        3234 Oct  5 12:29 .bashrc
+-rw-r--r--  1 root      root           0 Oct 24 17:22 .hidden-file
+-rw-r--r--  1 root      root         161 Apr 22  2024 .profile
+drwx------  2 root      root        4096 Oct  5 12:28 .ssh
+drwxr-xr-x  3 root      root        4096 Oct 24 17:08 .theia
+-rw-r--r--  1 root      root         109 Oct  5 12:29 .vimrc
+-rw-r--r--  1 root      root         165 Oct  5 12:30 .wget-hsts
+-rw-r--r--  1 root      root      148407 Oct 24 17:22 File-01.txt
+-rw-r--r--  1 root      root           0 Oct 24 17:22 file-01
+-rw-r--r--  1 root      root          18 Oct 24 17:22 file-01.txt
+-rw-r--r--  1 root      root           0 Oct 24 17:22 file-02
+lrwxrwxrwx  1 root      root           1 Oct  5 12:29 filesystem -> /
+-rw-r--r--  1 testuser  testuser      18 Oct 24 17:22 notmyfile
+-rw-r--r--  1 otheruser otheruser     19 Oct 24 17:22 notmyfile2
+drwxr-xr-x  2 root      root        4096 Oct 24 17:22 testDir
+drwxr-xr-x  3 root      root        4096 Oct 24 17:22 testdir
+root@ubuntu:~$ ls -lm
+File-01.txt, file-01, file-01.txt, file-02, filesystem, notmyfile, notmyfile2, testDir, testdir
+root@ubuntu:~$ ls -ltc
+total 168
+-rw-r--r-- 1 root      root      148407 Oct 24 17:22 File-01.txt
+-rw-r--r-- 1 root      root          18 Oct 24 17:22 file-01.txt
+drwxr-xr-x 3 root      root        4096 Oct 24 17:22 testdir
+drwxr-xr-x 2 root      root        4096 Oct 24 17:22 testDir
+-rw-r--r-- 1 testuser  testuser      18 Oct 24 17:22 notmyfile
+-rw-r--r-- 1 otheruser otheruser     19 Oct 24 17:22 notmyfile2
+-rw-r--r-- 1 root      root           0 Oct 24 17:22 file-02
+-rw-r--r-- 1 root      root           0 Oct 24 17:22 file-01
+lrwxrwxrwx 1 root      root           1 Oct  5 12:29 filesystem -> /
+root@ubuntu:~$ touch thenewestfile
+root@ubuntu:~$ ls -ltu
+total 168
+-rw-r--r-- 1 root      root           0 Oct 24 17:43 thenewestfile
+-rw-r--r-- 1 otheruser otheruser     19 Oct 24 17:22 notmyfile2
+-rw-r--r-- 1 testuser  testuser      18 Oct 24 17:22 notmyfile
+-rw-r--r-- 1 root      root      148407 Oct 24 17:22 File-01.txt
+-rw-r--r-- 1 root      root           0 Oct 24 17:22 file-02
+-rw-r--r-- 1 root      root           0 Oct 24 17:22 file-01
+-rw-r--r-- 1 root      root          18 Oct 24 17:22 file-01.txt
+drwxr-xr-x 2 root      root        4096 Oct 24 17:22 testDir
+drwxr-xr-x 3 root      root        4096 Oct 24 17:22 testdir
+lrwxrwxrwx 1 root      root           1 Oct 24 17:08 filesystem -> /
+root@ubuntu:~$ ls -ltc
+total 168
+-rw-r--r-- 1 root      root           0 Oct 24 17:43 thenewestfile
+-rw-r--r-- 1 root      root      148407 Oct 24 17:22 File-01.txt
+-rw-r--r-- 1 root      root          18 Oct 24 17:22 file-01.txt
+drwxr-xr-x 3 root      root        4096 Oct 24 17:22 testdir
+drwxr-xr-x 2 root      root        4096 Oct 24 17:22 testDir
+-rw-r--r-- 1 testuser  testuser      18 Oct 24 17:22 notmyfile
+-rw-r--r-- 1 otheruser otheruser     19 Oct 24 17:22 notmyfile2
+-rw-r--r-- 1 root      root           0 Oct 24 17:22 file-02
+-rw-r--r-- 1 root      root           0 Oct 24 17:22 file-01
+lrwxrwxrwx 1 root      root           1 Oct  5 12:29 filesystem -> /
+root@ubuntu:~$ echo "Hello, Sunil Here" > file-02
+root@ubuntu:~$ ls -ltu
+total 172
+-rw-r--r-- 1 root      root           0 Oct 24 17:43 thenewestfile
+-rw-r--r-- 1 otheruser otheruser     19 Oct 24 17:22 notmyfile2
+-rw-r--r-- 1 testuser  testuser      18 Oct 24 17:22 notmyfile
+-rw-r--r-- 1 root      root      148407 Oct 24 17:22 File-01.txt
+-rw-r--r-- 1 root      root          18 Oct 24 17:22 file-02
+-rw-r--r-- 1 root      root           0 Oct 24 17:22 file-01
+-rw-r--r-- 1 root      root          18 Oct 24 17:22 file-01.txt
+drwxr-xr-x 2 root      root        4096 Oct 24 17:22 testDir
+drwxr-xr-x 3 root      root        4096 Oct 24 17:22 testdir
+lrwxrwxrwx 1 root      root           1 Oct 24 17:08 filesystem -> /
+root@ubuntu:~$ ls -ltc
+total 172
+-rw-r--r-- 1 root      root          18 Oct 24 17:45 file-02
+-rw-r--r-- 1 root      root           0 Oct 24 17:43 thenewestfile
+-rw-r--r-- 1 root      root      148407 Oct 24 17:22 File-01.txt
+-rw-r--r-- 1 root      root          18 Oct 24 17:22 file-01.txt
+drwxr-xr-x 3 root      root        4096 Oct 24 17:22 testdir
+drwxr-xr-x 2 root      root        4096 Oct 24 17:22 testDir
+-rw-r--r-- 1 testuser  testuser      18 Oct 24 17:22 notmyfile
+-rw-r--r-- 1 otheruser otheruser     19 Oct 24 17:22 notmyfile2
+-rw-r--r-- 1 root      root           0 Oct 24 17:22 file-01
+lrwxrwxrwx 1 root      root           1 Oct  5 12:29 filesystem -> /
+root@ubuntu:~$ ls -s
+total 172
+148 File-01.txt    4 file-01.txt    0 filesystem    4 notmyfile2    4 testdir
+  0 file-01        4 file-02        4 notmyfile     4 testDir       0 thenewestfile
+root@ubuntu:~$ ls -ls
+total 172
+148 -rw-r--r-- 1 root      root      148407 Oct 24 17:22 File-01.txt
+  0 -rw-r--r-- 1 root      root           0 Oct 24 17:22 file-01
+  4 -rw-r--r-- 1 root      root          18 Oct 24 17:22 file-01.txt
+  4 -rw-r--r-- 1 root      root          18 Oct 24 17:45 file-02
+  0 lrwxrwxrwx 1 root      root           1 Oct  5 12:29 filesystem -> /
+  4 -rw-r--r-- 1 testuser  testuser      18 Oct 24 17:22 notmyfile
+  4 -rw-r--r-- 1 otheruser otheruser     19 Oct 24 17:22 notmyfile2
+  4 drwxr-xr-x 2 root      root        4096 Oct 24 17:22 testDir
+  4 drwxr-xr-x 3 root      root        4096 Oct 24 17:22 testdir
+  0 -rw-r--r-- 1 root      root           0 Oct 24 17:43 thenewestfile
+root@ubuntu:~$ ls -lh
+total 172K
+-rw-r--r-- 1 root      root      145K Oct 24 17:22 File-01.txt
+-rw-r--r-- 1 root      root         0 Oct 24 17:22 file-01
+-rw-r--r-- 1 root      root        18 Oct 24 17:22 file-01.txt
+-rw-r--r-- 1 root      root        18 Oct 24 17:45 file-02
+lrwxrwxrwx 1 root      root         1 Oct  5 12:29 filesystem -> /
+-rw-r--r-- 1 testuser  testuser    18 Oct 24 17:22 notmyfile
+-rw-r--r-- 1 otheruser otheruser   19 Oct 24 17:22 notmyfile2
+drwxr-xr-x 2 root      root      4.0K Oct 24 17:22 testDir
+drwxr-xr-x 3 root      root      4.0K Oct 24 17:22 testdir
+-rw-r--r-- 1 root      root         0 Oct 24 17:43 thenewestfile
+root@ubuntu:~$ ls -lS
+total 172
+-rw-r--r-- 1 root      root      148407 Oct 24 17:22 File-01.txt
+drwxr-xr-x 2 root      root        4096 Oct 24 17:22 testDir
+drwxr-xr-x 3 root      root        4096 Oct 24 17:22 testdir
+-rw-r--r-- 1 otheruser otheruser     19 Oct 24 17:22 notmyfile2
+-rw-r--r-- 1 root      root          18 Oct 24 17:22 file-01.txt
+-rw-r--r-- 1 root      root          18 Oct 24 17:45 file-02
+-rw-r--r-- 1 testuser  testuser      18 Oct 24 17:22 notmyfile
+lrwxrwxrwx 1 root      root           1 Oct  5 12:29 filesystem -> /
+-rw-r--r-- 1 root      root           0 Oct 24 17:22 file-01
+-rw-r--r-- 1 root      root           0 Oct 24 17:43 thenewestfile
+root@ubuntu:~$ ls -LSh
+File-01.txt  filesystem  testDir  testdir  notmyfile2  file-01.txt  file-02  notmyfile  file-01  thenewestfile
+root@ubuntu:~$ ls -lSh
+total 172K
+-rw-r--r-- 1 root      root      145K Oct 24 17:22 File-01.txt
+drwxr-xr-x 2 root      root      4.0K Oct 24 17:22 testDir
+drwxr-xr-x 3 root      root      4.0K Oct 24 17:22 testdir
+-rw-r--r-- 1 otheruser otheruser   19 Oct 24 17:22 notmyfile2
+-rw-r--r-- 1 root      root        18 Oct 24 17:22 file-01.txt
+-rw-r--r-- 1 root      root        18 Oct 24 17:45 file-02
+-rw-r--r-- 1 testuser  testuser    18 Oct 24 17:22 notmyfile
+lrwxrwxrwx 1 root      root         1 Oct  5 12:29 filesystem -> /
+-rw-r--r-- 1 root      root         0 Oct 24 17:22 file-01
+-rw-r--r-- 1 root      root         0 Oct 24 17:43 thenewestfile
+root@ubuntu:~$ ls -1
+File-01.txt
+file-01
+file-01.txt
+file-02
+filesystem
+notmyfile
+notmyfile2
+testDir
+testdir
+thenewestfile
+root@ubuntu:~$ ls --format=commas
+File-01.txt, file-01, file-01.txt, file-02, filesystem, notmyfile, notmyfile2, testDir, testdir, thenewestfile
+root@ubuntu:~$ ls -1 --formate=commas
+ls: unrecognized option '--formate=commas'
+Try 'ls --help' for more information.
+root@ubuntu:~$ ls --fomat=dot
+ls: unrecognized option '--fomat=dot'
+Try 'ls --help' for more information.
+root@ubuntu:~$ ls -1 --format=commas
+File-01.txt, file-01, file-01.txt, file-02, filesystem, notmyfile, notmyfile2, testDir, testdir, thenewestfile
+root@ubuntu:~$ ls -m
+File-01.txt, file-01, file-01.txt, file-02, filesystem, notmyfile, notmyfile2, testDir, testdir, thenewestfile
+root@ubuntu:~$ ls --format=long
+total 172
+-rw-r--r-- 1 root      root      148407 Oct 24 17:22 File-01.txt
+-rw-r--r-- 1 root      root           0 Oct 24 17:22 file-01
+-rw-r--r-- 1 root      root          18 Oct 24 17:22 file-01.txt
+-rw-r--r-- 1 root      root          18 Oct 24 17:45 file-02
+lrwxrwxrwx 1 root      root           1 Oct  5 12:29 filesystem -> /
+-rw-r--r-- 1 testuser  testuser      18 Oct 24 17:22 notmyfile
+-rw-r--r-- 1 otheruser otheruser     19 Oct 24 17:22 notmyfile2
+drwxr-xr-x 2 root      root        4096 Oct 24 17:22 testDir
+drwxr-xr-x 3 root      root        4096 Oct 24 17:22 testdir
+-rw-r--r-- 1 root      root           0 Oct 24 17:43 thenewestfile
+root@ubuntu:~$ ls -al --author
+total 204
+drwx------  6 root      root      root        4096 Oct 24 17:43 .
+drwxr-xr-x 22 root      root      root        4096 Oct  5 12:29 ..
+-rw-r--r--  1 root      root      root        3234 Oct  5 12:29 .bashrc
+-rw-r--r--  1 root      root      root           0 Oct 24 17:22 .hidden-file
+-rw-r--r--  1 root      root      root         161 Apr 22  2024 .profile
+drwx------  2 root      root      root        4096 Oct  5 12:28 .ssh
+drwxr-xr-x  3 root      root      root        4096 Oct 24 17:08 .theia
+-rw-r--r--  1 root      root      root         109 Oct  5 12:29 .vimrc
+-rw-r--r--  1 root      root      root         165 Oct  5 12:30 .wget-hsts
+-rw-r--r--  1 root      root      root      148407 Oct 24 17:22 File-01.txt
+-rw-r--r--  1 root      root      root           0 Oct 24 17:22 file-01
+-rw-r--r--  1 root      root      root          18 Oct 24 17:22 file-01.txt
+-rw-r--r--  1 root      root      root          18 Oct 24 17:45 file-02
+lrwxrwxrwx  1 root      root      root           1 Oct  5 12:29 filesystem -> /
+-rw-r--r--  1 testuser  testuser  testuser      18 Oct 24 17:22 notmyfile
+-rw-r--r--  1 otheruser otheruser otheruser     19 Oct 24 17:22 notmyfile2
+drwxr-xr-x  2 root      root      root        4096 Oct 24 17:22 testDir
+drwxr-xr-x  3 root      root      root        4096 Oct 24 17:22 testdir
+-rw-r--r--  1 root      root      root           0 Oct 24 17:43 thenewestfile
+root@ubuntu:~$ ls -ald
+drwx------ 6 root root 4096 Oct 24 17:43 .
+root@ubuntu:~$ ls --version
+ls (GNU coreutils) 9.4
+Copyright (C) 2023 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
 
+Written by Richard M. Stallman and David MacKenzie.
+root@ubuntu:~$ ls --help
+Usage: ls [OPTION]... [FILE]...
+List information about the FILEs (the current directory by default).
+Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -a, --all                  do not ignore entries starting with .
+  -A, --almost-all           do not list implied . and ..
+      --author               with -l, print the author of each file
+  -b, --escape               print C-style escapes for nongraphic characters
+      --block-size=SIZE      with -l, scale sizes by SIZE when printing them;
+                             e.g., '--block-size=M'; see SIZE format below
+
+  -B, --ignore-backups       do not list implied entries ending with ~
+  -c                         with -lt: sort by, and show, ctime (time of last
+                             change of file status information);
+                             with -l: show ctime and sort by name;
+                             otherwise: sort by ctime, newest first
+
+  -C                         list entries by columns
+      --color[=WHEN]         color the output WHEN; more info below
+  -d, --directory            list directories themselves, not their contents
+  -D, --dired                generate output designed for Emacs' dired mode
+  -f                         list all entries in directory order
+  -F, --classify[=WHEN]      append indicator (one of */=>@|) to entries WHEN
+      --file-type            likewise, except do not append '*'
+      --format=WORD          across -x, commas -m, horizontal -x, long -l,
+                             single-column -1, verbose -l, vertical -C
+
+      --full-time            like -l --time-style=full-iso
+  -g                         like -l, but do not list owner
+      --group-directories-first
+                             group directories before files;
+                             can be augmented with a --sort option, but any
+                             use of --sort=none (-U) disables grouping
+
+  -G, --no-group             in a long listing, don't print group names
+  -h, --human-readable       with -l and -s, print sizes like 1K 234M 2G etc.
+      --si                   likewise, but use powers of 1000 not 1024
+  -H, --dereference-command-line
+                             follow symbolic links listed on the command line
+      --dereference-command-line-symlink-to-dir
+                             follow each command line symbolic link
+                             that points to a directory
+
+      --hide=PATTERN         do not list implied entries matching shell PATTERN
+                             (overridden by -a or -A)
+
+      --hyperlink[=WHEN]     hyperlink file names WHEN
+      --indicator-style=WORD
+                             append indicator with style WORD to entry names:
+                             none (default), slash (-p),
+                             file-type (--file-type), classify (-F)
+
+  -i, --inode                print the index number of each file
+  -I, --ignore=PATTERN       do not list implied entries matching shell PATTERN
+  -k, --kibibytes            default to 1024-byte blocks for file system usage;
+                             used only with -s and per directory totals
+
+  -l                         use a long listing format
+  -L, --dereference          when showing file information for a symbolic
+                             link, show information for the file the link
+                             references rather than for the link itself
+
+  -m                         fill width with a comma separated list of entries
+  -n, --numeric-uid-gid      like -l, but list numeric user and group IDs
+  -N, --literal              print entry names without quoting
+  -o                         like -l, but do not list group information
+  -p, --indicator-style=slash
+                             append / indicator to directories
+  -q, --hide-control-chars   print ? instead of nongraphic characters
+      --show-control-chars   show nongraphic characters as-is (the default,
+                             unless program is 'ls' and output is a terminal)
+
+  -Q, --quote-name           enclose entry names in double quotes
+      --quoting-style=WORD   use quoting style WORD for entry names:
+                             literal, locale, shell, shell-always,
+                             shell-escape, shell-escape-always, c, escape
+                             (overrides QUOTING_STYLE environment variable)
+
+  -r, --reverse              reverse order while sorting
+  -R, --recursive            list subdirectories recursively
+  -s, --size                 print the allocated size of each file, in blocks
+  -S                         sort by file size, largest first
+      --sort=WORD            sort by WORD instead of name: none (-U), size (-S),
+                             time (-t), version (-v), extension (-X), width
+
+      --time=WORD            select which timestamp used to display or sort;
+                               access time (-u): atime, access, use;
+                               metadata change time (-c): ctime, status;
+                               modified time (default): mtime, modification;
+                               birth time: birth, creation;
+                             with -l, WORD determines which time to show;
+                             with --sort=time, sort by WORD (newest first)
+
+      --time-style=TIME_STYLE
+                             time/date format with -l; see TIME_STYLE below
+  -t                         sort by time, newest first; see --time
+  -T, --tabsize=COLS         assume tab stops at each COLS instead of 8
+  -u                         with -lt: sort by, and show, access time;
+                             with -l: show access time and sort by name;
+                             otherwise: sort by access time, newest first
+
+  -U                         do not sort; list entries in directory order
+  -v                         natural sort of (version) numbers within text
+  -w, --width=COLS           set output width to COLS.  0 means no limit
+  -x                         list entries by lines instead of by columns
+  -X                         sort alphabetically by entry extension
+  -Z, --context              print any security context of each file
+      --zero                 end each output line with NUL, not newline
+  -1                         list one file per line
+      --help        display this help and exit
+      --version     output version information and exit
+
+The SIZE argument is an integer and optional unit (example: 10K is 10*1024).
+Units are K,M,G,T,P,E,Z,Y,R,Q (powers of 1024) or KB,MB,... (powers of 1000).
+Binary prefixes can be used, too: KiB=K, MiB=M, and so on.
+
+The TIME_STYLE argument can be full-iso, long-iso, iso, locale, or +FORMAT.
+FORMAT is interpreted like in date(1).  If FORMAT is FORMAT1<newline>FORMAT2,
+then FORMAT1 applies to non-recent files and FORMAT2 to recent files.
+TIME_STYLE prefixed with 'posix-' takes effect only outside the POSIX locale.
+Also the TIME_STYLE environment variable sets the default style to use.
+
+The WHEN argument defaults to 'always' and can also be 'auto' or 'never'.
+
+Using color to distinguish file types is disabled both by default and
+with --color=never.  With --color=auto, ls emits color codes only when
+standard output is connected to a terminal.  The LS_COLORS environment
+variable can change the settings.  Use the dircolors(1) command to set it.
+
+Exit status:
+ 0  if OK,
+ 1  if minor problems (e.g., cannot access subdirectory),
+ 2  if serious trouble (e.g., cannot access command-line argument).
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Report any translation bugs to <https://translationproject.org/team/>
+Full documentation <https://www.gnu.org/software/coreutils/ls>
+or available locally via: info '(coreutils) ls invocation'
+root@ubuntu:~$ ls --format=long
+total 172
+-rw-r--r-- 1 root      root      148407 Oct 24 17:22 File-01.txt
+-rw-r--r-- 1 root      root           0 Oct 24 17:22 file-01
+-rw-r--r-- 1 root      root          18 Oct 24 17:22 file-01.txt
+-rw-r--r-- 1 root      root          18 Oct 24 17:45 file-02
+lrwxrwxrwx 1 root      root           1 Oct  5 12:29 filesystem -> /
+-rw-r--r-- 1 testuser  testuser      18 Oct 24 17:22 notmyfile
+-rw-r--r-- 1 otheruser otheruser     19 Oct 24 17:22 notmyfile2
+drwxr-xr-x 2 root      root        4096 Oct 24 17:22 testDir
+drwxr-xr-x 3 root      root        4096 Oct 24 17:22 testdir
+-rw-r--r-- 1 root      root           0 Oct 24 17:43 thenewestfile
+root@ubuntu:~$ ls -l
+total 172
+-rw-r--r-- 1 root      root      148407 Oct 24 17:22 File-01.txt
+-rw-r--r-- 1 root      root           0 Oct 24 17:22 file-01
+-rw-r--r-- 1 root      root          18 Oct 24 17:22 file-01.txt
+-rw-r--r-- 1 root      root          18 Oct 24 17:45 file-02
+lrwxrwxrwx 1 root      root           1 Oct  5 12:29 filesystem -> /
+-rw-r--r-- 1 testuser  testuser      18 Oct 24 17:22 notmyfile
+-rw-r--r-- 1 otheruser otheruser     19 Oct 24 17:22 notmyfile2
+drwxr-xr-x 2 root      root        4096 Oct 24 17:22 testDir
+drwxr-xr-x 3 root      root        4096 Oct 24 17:22 testdir
+-rw-r--r-- 1 root      root           0 Oct 24 17:43 thenewestfile
+root@ubuntu:~$ ls -s 
+total 172
+148 File-01.txt    4 file-01.txt    0 filesystem    4 notmyfile2    4 testdir
+  0 file-01        4 file-02        4 notmyfile     4 testDir       0 thenewestfile
+root@ubuntu:~$ ls --color=no
+File-01.txt  file-01  file-01.txt  file-02  filesystem  notmyfile  notmyfile2  testDir  testdir  thenewestfile
+root@ubuntu:~$ ls -color=auto
+ls: invalid option -- '='
+Try 'ls --help' for more information.
+root@ubuntu:~$ ls -u
+thenewestfile  notmyfile2  notmyfile  File-01.txt  file-02  file-01  file-01.txt  testDir  testdir  filesystem
+root@ubuntu:~$ ls-1Q
+ls-1Q: command not found
+root@ubuntu:~$ ls -lQ        
+total 172
+-rw-r--r-- 1 root      root      148407 Oct 24 17:22 "File-01.txt"
+-rw-r--r-- 1 root      root           0 Oct 24 17:22 "file-01"
+-rw-r--r-- 1 root      root          18 Oct 24 17:22 "file-01.txt"
+-rw-r--r-- 1 root      root          18 Oct 24 17:45 "file-02"
+lrwxrwxrwx 1 root      root           1 Oct  5 12:29 "filesystem" -> "/"
+-rw-r--r-- 1 testuser  testuser      18 Oct 24 17:22 "notmyfile"
+-rw-r--r-- 1 otheruser otheruser     19 Oct 24 17:22 "notmyfile2"
+drwxr-xr-x 2 root      root        4096 Oct 24 17:22 "testDir"
+drwxr-xr-x 3 root      root        4096 Oct 24 17:22 "testdir"
+-rw-r--r-- 1 root      root           0 Oct 24 17:43 "thenewestfile"
+root@ubuntu:~$ ls -1
+File-01.txt
+file-01
+file-01.txt
+file-02
+filesystem
+notmyfile
+notmyfile2
+testDir
+testdir
+thenewestfile
+root@ubuntu:~$ ls -lS
+total 172
+-rw-r--r-- 1 root      root      148407 Oct 24 17:22 File-01.txt
+drwxr-xr-x 2 root      root        4096 Oct 24 17:22 testDir
+drwxr-xr-x 3 root      root        4096 Oct 24 17:22 testdir
+-rw-r--r-- 1 otheruser otheruser     19 Oct 24 17:22 notmyfile2
+-rw-r--r-- 1 root      root          18 Oct 24 17:22 file-01.txt
+-rw-r--r-- 1 root      root          18 Oct 24 17:45 file-02
+-rw-r--r-- 1 testuser  testuser      18 Oct 24 17:22 notmyfile
+lrwxrwxrwx 1 root      root           1 Oct  5 12:29 filesystem -> /
+-rw-r--r-- 1 root      root           0 Oct 24 17:22 file-01
+-rw-r--r-- 1 root      root           0 Oct 24 17:43 thenewestfile
+root@ubuntu:~$ ls -c
+file-02  thenewestfile  File-01.txt  file-01.txt  testdir  testDir  notmyfile  notmyfile2  file-01  filesystem
+root@ubuntu:~$ 
